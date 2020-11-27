@@ -1,0 +1,160 @@
+.modern-technology {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-right: 420px;
+}
+
+.modern-technology__info {
+  background-image: url("../img/services-bg.png");
+  background-position: left 80px;
+  background-repeat: no-repeat;
+}
+
+.modern-technology__img {
+  display: inline-block;
+  vertical-align: baseline;
+  max-width: 928px;
+  width: 100%;
+  height: 619px;
+  margin-right: 100px;
+}
+
+.modern-technology__heading {
+  position: relative;
+  z-index: 1;
+  width: 378px;
+  margin-top: 61px;
+  margin-bottom: 12px;
+  padding-top: 16px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+  color: #272727;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 4px;
+    background-color: #FFD600;
+  }
+}
+
+.modern-technology__text {
+  width: 780px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+  margin: 0;
+
+  &--bottom {
+    margin-bottom: 30px;
+  }
+}
+
+.modern-technology__list {
+  @include reset-list;
+}
+
+.modern-technology__item {
+  display: flex;
+  margin-bottom: 24px;
+  &::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 72px;
+    height: 70px;
+    margin-right: 31px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &--expert::before {
+    background-image: url("../img/эксперт.png");
+  }
+  &--technology::before {
+    background-image: url("../img/tooth.png");
+  }
+  &--location::before {
+    background-image: url("../img/location.png");
+  }
+}
+
+.modern-technology__wrapper-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.modern-technology__wrapper-text {
+  max-width: 516px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4D4D4D;
+}
+
+@include retina-bg {
+  .modern-technology__info {
+    background-image: url("../img/services-bg@2x.png");
+  }
+  .modern-technology__item {
+    &--expert::before {
+      background-image: url("../img/эксперт@2x.png");
+    }
+    &--technology::before {
+      background-image: url("../img/tooth@2x.png");
+    }
+    &--location::before {
+      background-image: url("../img/location@2x.png");
+    }
+  }
+}
+
+@include breakpoint-down (1024) {
+  .modern-technology {
+    margin-right: 45%;
+  }
+  .modern-technology__heading {
+    margin-top: 0;
+  }
+  .modern-technology__text {
+    width: 538px;
+  }
+  .modern-technology__img {
+    height: 670px;
+    margin-right: 18px;
+  }
+}
+@include breakpoint-down (913) {
+  .modern-technology__wrapper-text {
+    max-width: 100%;
+  }
+  .modern-technology__text {
+    width: 400px;
+  }
+}
+@include breakpoint-down (500) {
+  .modern-technology__text {
+    width: 100%;
+  }
+  .modern-technology__heading {
+    width: 100%;
+  }
+  .modern-technology__img {
+    display: none;
+  }
+  .modern-technology {
+    margin-right: 0;
+    padding-left: 2px;
+    padding-right: 20px;
+  }
+}

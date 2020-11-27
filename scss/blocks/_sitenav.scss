@@ -1,0 +1,143 @@
+.sitenav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.sitenav__list {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+}
+
+.sitenav__link {
+  margin-right: 35px;
+  display: block;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: #FFD600;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+
+  &--active {
+    color: #FFD600;
+  }
+
+  &:nth-child(5n) {
+    margin-right: 0;
+  }
+}
+
+.sitenav__icons {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.sitenav__icon:not(:last-child) {
+  margin-right: 13px;
+}
+
+.sitenav__icon-link {
+  display: block;
+  text-decoration: none;
+  &::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &--vkontakte::before {
+    background-image: url("../img/vkontakte.png");
+  }
+  &--instagram::before {
+    background-image: url("../img/instagram.png");
+  }
+  &--twitter::before {
+    background-image: url("../img/twitter.png");
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+@include retina-bg {
+  .sitenav__icon-link {
+    &--vkontakte::before {
+      background-image: url("../img/vkontakte@2x.png");
+    }
+    &--instagram::before {
+      background-image: url("../img/instagram@2x.png");
+    }
+    &--twitter::before {
+      background-image: url("../img/twitter@2x.png");
+    }
+  }
+}
+
+@include breakpoint-down (1024) {
+  .sitenav {
+    margin-left: 105px;
+  }
+}
+@include breakpoint-down (898) {
+  .sitenav {
+    margin-left: 50px;
+  }
+}
+
+@include breakpoint-down (845) {
+  .sitenav {
+    display: none;
+    margin-left: 0;
+  }
+  .site-header--open .sitenav {
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 100%;
+    background-color: #0055B8;
+  }
+  .site-header--open .sitenav__list {
+    flex-direction: column;
+  }
+  .sitenav__item {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #FFD600;
+  }
+  .sitenav__link {
+    margin-right: 0;
+    &:hover {
+      background-color: #FFD600;
+      color: #0055B8;
+    }
+  }
+  .sitenav__icons {
+    padding-top: 64px;
+    padding-bottom: 26px;
+    border-top: 1px solid #FFD600;
+    justify-content: center;
+  }
+}

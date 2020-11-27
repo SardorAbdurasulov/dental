@@ -1,0 +1,179 @@
+.site-header {
+  width: 100%;
+  position: fixed;
+  z-index: 55;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-header__container {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header__top {
+  padding-top: 16px;
+  padding-bottom: 56px;
+}
+
+.site-header__list {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header__item {
+  display: flex;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 29px;
+    height: 29px;
+    margin-right: 7px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &--tel::before {
+    background-image: url("../img/phone.png");
+  }
+  &--clock::before {
+    background-image: url("../img/clock.png");
+  }
+}
+
+
+.site-header__tel {
+  display:inline-block;
+  vertical-align: baseline;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #272727;
+
+  &-number {
+    margin-top: 3px;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #272727;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.site-header__clock {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #272727;
+}
+
+.site-header__item-text {
+  margin: 0;
+  margin-bottom: 3px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #00B007;
+}
+
+.site-header__bottom {
+  width: 1140px;
+  position: absolute;
+  z-index: 1;
+  left: 30px;
+  top: 70%;
+  background-color: #0055B8;
+  border-radius: 5px;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.site-header__logo-tabs {
+  display: none;
+
+}
+.site-header__logo-img {
+  display: inline-block;
+  vertical-align: baseline;
+  max-width: 140px;
+  height: 21px;
+}
+.site-header__bottom-button {
+  display: none;
+  width: 25px;
+  height: 18px;
+  border: none;
+  outline: none;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  background-color: transparent;
+  background-image: url("../img/gamburger.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.site-header--open .site-header__bottom-button {
+  background-image: url("../img/Vector.svg");
+}
+
+@include retina-bg {
+  .site-header__item {
+    &--tel::before {
+      background-image: url("../img/phone@2x.png");
+    }
+    &--clock::before {
+      background-image: url("../img/clock@2x.png");
+    }
+  }
+}
+
+@include breakpoint-down (1024) {
+  .site-header__logo-tabs {
+    display: block;
+  }
+  .site-header__logo-img {
+    display: inline-block;
+    vertical-align: baseline;
+    max-width: 140px;
+    height: 21px;
+  }
+}
+@include breakpoint-down (1170) {
+  .site-header__bottom {
+    max-width: 100%;
+    border-radius: 0;
+    left: 0;
+  }
+}
+
+@include breakpoint-down (1024) {
+  .site-header__top {
+    display: none;
+  }
+}
+@include breakpoint-down (845) {
+  .site-header__bottom {
+    max-width: 100%;
+  }
+  .site-header__bottom-button {
+    display: block;
+  }
+}

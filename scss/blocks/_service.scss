@@ -1,0 +1,106 @@
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 29px 66px 24px 57px;
+  background-color: #fff;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 77px;
+    height: 66px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &--tooth::before {
+    background-image: url("../img/tooth.png");
+  }
+  &--clean-tooth::before {
+    background-image: url("../img/clean-tooth.png");
+  }
+  &--lupa::before {
+    background-image: url("../img/lupa.png");
+  }
+  &--angel::before {
+    background-image: url("../img/angel.png");
+  }
+}
+
+.service__heading {
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #272727;
+}
+
+.money {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #0A60C3;
+  margin: 0;
+  padding-top: 35px;
+  margin-top: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 3px;
+    background-color: #0A60C3;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 13px;
+    transform: translateX(-50%);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration-line: line-through;
+    color: rgba(0, 0, 0, 0.25);
+  }
+  &--dental::after {
+    content: "5000₽";
+  }
+  &--hygiene::after {
+    content: "6000₽";
+  }
+  &--free::after {
+    content: "1000₽";
+  }
+  &--children::after {
+    content: "5000₽";
+  }
+}
+
+@include retina-bg {
+  .service {
+    &--tooth::before {
+      background-image: url("../img/tooth@2x.png");
+    }
+    &--clean-tooth::before {
+      background-image: url("../img/clean-tooth@2x.png");
+    }
+    &--lupa::before {
+      background-image: url("../img/lupa@2x.png");
+    }
+    &--angel::before {
+      background-image: url("../img/angel@2x.png");
+    }
+  }
+}

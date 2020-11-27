@@ -1,0 +1,135 @@
+.services {
+  background-image: url("../img/services-bg.png");
+  background-position: center 20px;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-top: 51px;
+}
+
+.services__heading {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 11px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+  color: #272727;
+  padding-top: 16px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: #FFD600;
+  }
+}
+
+.services__text {
+  width: 616px;
+  margin-top: 0;
+  margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #4D4D4D;
+}
+
+.services__box {
+  position: relative;
+  z-index: 1;
+}
+
+.services__button {
+  position: absolute;
+  z-index: 1;
+  width: 42px;
+  height: 49px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #1D6ECB;
+  background-position: center center;
+  background-repeat: no-repeat;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+
+  &--left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("../img/services-button-left.png");
+  }
+  &--right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("../img/services-button-right.png");
+  }
+}
+
+.services__list {
+  max-width: 1000px;
+  @include reset-list;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  margin: 0 auto;
+}
+
+.services__item {
+  width: 200px;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-left: 17px;
+  margin-right: 17px;
+}
+
+@include retina-bg {
+  .services {
+    background-image: url("../img/services-bg@2x.png");
+  }
+  .services__button {
+    &--left {
+      background-image: url("../img/services-button-left@2x.png");
+    }
+    &--right {
+    background-image: url("../img/services-button-right@2x.png");
+    }
+  }
+}
+
+@include breakpoint-down (1024) {
+  .services__list {
+    max-width: 770px;
+  }
+}
+@include breakpoint-down (890) {
+  .services__button {
+    display: none;
+  }
+  .services__list {
+    max-width: 100%;
+  }
+}
+
+@include breakpoint-down (640) {
+  .services__text {
+    width: 100%;
+  }
+}

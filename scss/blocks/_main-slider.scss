@@ -1,0 +1,213 @@
+.main-slider__container {
+  position: relative;
+  z-index: 1;
+}
+
+.main-slider__buttons-top {
+  position: absolute;
+  z-index: 1;
+  left: 30px;
+  top: 683px;
+  display: flex;
+  align-items: center;
+}
+
+.main-slider__button-top {
+  display: inline-block;
+  vertical-align: baseline;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+
+  &--left {
+    width: 42px;
+    height: 70px;
+    background-color: #FFD600;
+    background-image: url("../img/left.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &--right {
+    width: 70px;
+    height: 70px;
+    margin-left: 9px;
+    background-color: #FFD600;
+    background-image: url("../img/right.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+.main-slider__list {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-slider__img {
+  display: inline-block;
+  vertical-align: baseline;
+  height: 989px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.main-slider__box {
+  position: absolute;
+  z-index: 1;
+  left: 30px;
+  top: -680px;
+  max-width: 551px;
+}
+
+.main-slider__text {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #272727;
+}
+
+.main-slider__title {
+  margin-top: 0;
+  margin-bottom: 27px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #272727;
+}
+
+.main-slider__button {
+  display: inline-block;
+  vertical-align: baseline;
+  border: none;
+  outline: none;
+  padding: 24px 115px;
+  background-color: #0055B8;
+  color: #fff;
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+@include breakpoint-down (1024) {
+  .main-slider__box {
+    top: -600px;
+  }
+  .main-slider__img {
+    height: 872px;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .main-slider__buttons-top {
+    top: 750px;
+   }
+}
+@include breakpoint-down (860) {
+  .main-slider__box {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 21px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .main-slider__button {
+    display: none;
+  }
+  .main-slider__img {
+    height: 872px;
+    object-fit: cover;
+    object-position: -550px;
+  }
+  .main-slider__buttons-top {
+    top: 750px;
+   }
+}
+
+@include breakpoint-down (780) {
+  .main-slider__img {
+    height: 872px;
+    object-fit: cover;
+    object-position: -650px;
+  }
+}
+@include breakpoint-down (657) {
+  .main-slider__img {
+    height: 872px;
+    object-fit: cover;
+    object-position: -800px;
+  }
+}
+@include breakpoint-down (657) {
+  .main-slider__img {
+    height: 872px;
+    object-fit: cover;
+    object-position: -900px;
+  }
+}
+@include breakpoint-down (571) {
+  .main-slider__text {
+    max-width: 227px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #272727;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main-slider__title {
+    max-width: 333px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #272727;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@include breakpoint-down (375) {
+  .main-slider__img {
+    display: inline-block;
+    vertical-align: baseline;
+    height: 599px;
+    object-fit: cover;
+    object-position: -580px;
+  }
+  .main-slider__buttons-top {
+    top: 531px;
+   }
+  .main-slider__button-top {
+    &--left {
+      width: 26px;
+      height: 44px;
+      background-color: #FFD600;
+      background-image: url("../img/left.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    &--right {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}
